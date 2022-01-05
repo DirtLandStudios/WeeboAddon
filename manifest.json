@@ -21,8 +21,10 @@
 		"gecko": {
 		  "id": "weeboaddon@waifu.moe"
 		}
-	  }
+	  },
 	  
-  
+	  "browser_action": {
+		"default_popup": "/src/popup/popup.html"
+	  }
   }
   

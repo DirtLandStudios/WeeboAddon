@@ -9,15 +9,11 @@ var database = browser.storage.local.get("JsonUrl");
 //find the link to the anime in the database
 var links = database[animeID]
 
-//I hate JS soooooo much, I have no idea wtf this will do, all i know is that it won't do what I want it to.
-function CreateLink(_link) {
+//look at all the links under the animeID, and create a button for each
+
+for (let i in links) {
 	var Hlink = document.createElement("Hlink")
-	Hlink.textContent = _link
-	Hlink.href = _link.value
+	Hlink.textContent = i
+	Hlink.href = links[i]
 	document.body.appendChild(Hlink)
 }
-//look at all the links under the animeID, and create a button for each
-if (Array.isArray(links)) {
-	links.forEach(CreateLink)
-}
-

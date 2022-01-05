@@ -1,3 +1,5 @@
+//not sure what to do with this, exerything is done with the popup
+
 //first extract MAL animeID from url. I am making an array with all the pathnames
 //eg https://myanimelist.net/anime/16498/Shingeki_no_Kyojin => anime/16498/Shingeki_no_Kyojin
 //anime/16498/Shingeki_no_Kyojin => {anime, 16498, Shingeki_no_Kyojin}. animeID is the number
