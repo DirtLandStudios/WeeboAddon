@@ -10,7 +10,10 @@ var database = browser.storage.local.get("JsonUrl");
 var links = database[animeID]
 
 //look at all the links under the animeID, and create a button for each
-
+/*
+{links} should be an something like this:
+"link name": "link", "link name 2": "link 2", ......
+*/
 for (let i in links) {
 	var Hlink = document.createElement("Hlink")
 	Hlink.textContent = i
