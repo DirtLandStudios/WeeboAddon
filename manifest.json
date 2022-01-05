@@ -1,0 +1,17 @@
+{
+
+	"manifest_version": 2,
+	"name": "weeboaddon",
+	"version": "0.0.1",
+  
+	"description": "A browser addon that adds user defined links in MAL",
+  
+	"content_scripts": [
+	  {
+		"matches": ["*://myanimelist.net/anime/*"],
+		"js": ["main.js"]
+	  }
+	]
+  
+  }
+  
