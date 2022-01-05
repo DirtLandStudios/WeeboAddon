@@ -1,0 +1,1 @@
+//shows links accosiated with current animeID
