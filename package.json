@@ -2,7 +2,7 @@
   "name": "weeboaddon",
   "version": "0.0.1",
   "description": "A browser addon that adds user defined links in MAL",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

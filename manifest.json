@@ -9,9 +9,20 @@
 	"content_scripts": [
 	  {
 		"matches": ["*://myanimelist.net/anime/*"],
-		"js": ["main.js"]
+		"js": ["src/main.js"]
 	  }
-	]
+	],
+	"options_ui": {
+		"page": "src/options/options.html"
+	},
+	"permissions": ["storage"],
+
+	"browser_specific_settings": {
+		"gecko": {
+		  "id": "weeboaddon@waifu.moe"
+		}
+	  }
+	  
   
   }
   
