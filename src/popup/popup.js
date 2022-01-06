@@ -1,10 +1,19 @@
 //shows links accosiated with current animeID
 
+function getPage(){
+	var currentUrl
+	browser.tabs.query({currentWindow: true, active: true, url: "*://myanimelist.net/anime/*"})
+	  .then((tabs) => {
+		currentUrl = tabs[0].url
+	})
+	return currentUrl
+}
+
 //first extract MAL animeID from url. I am making an array with all the pathnames
 //eg https://myanimelist.net/anime/16498/Shingeki_no_Kyojin => anime/16498/Shingeki_no_Kyojin
 //anime/16498/Shingeki_no_Kyojin => {anime, 16498, Shingeki_no_Kyojin}. animeID is the number
 
-var animeID = new URL(document.location /* THIS WON T WORK HERE!!*/).pathname.split("/")[1];
+var animeID = new URL(getPage).pathname.split("/")[1];
 var database = browser.storage.local.get("JsonUrl");
 //find the link to the anime in the database
 var links = database[animeID]
