@@ -10,3 +10,4 @@ var link = database[animeID]
 
 */
 
+browser.runtime.sendMessage(document.getElementById("myinfo_watchedeps").value)

@@ -1,5 +1,8 @@
 {
 	"animeID": {
+		"1": {
+			"link name episode 1": "link episode 1"
+		},
 		"link name": "link"
 	}
 }
