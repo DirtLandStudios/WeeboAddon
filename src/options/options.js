@@ -1,5 +1,7 @@
 //https://github.com/mdn/webextensions-examples
-document.getElementById("JsonUrl").value = browser.storage.local.get("JsonUrl");
+browser.storage.local.get("JsonUrl")
+	.then( (result) => document.getElementById("JsonUrl").value = result["JsonUrl"])
+
 function saveOptions(s) {
 	browser.storage.local.set({
 		JsonUrl: document.getElementById("JsonUrl").value
