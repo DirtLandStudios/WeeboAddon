@@ -8,8 +8,8 @@
   
 	"content_scripts": [
 	  {
-		"matches": ["*://myanimelist.net/anime/*"],
-		"js": ["src/main.js"]
+		"matches": ["*://*.myanimelist.net/anime/*"],
+		"js": ["main.js"]
 	  }
 	],
 	"options_ui": {
