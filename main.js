@@ -1,9 +1,7 @@
 let watched = document.getElementById("myinfo_watchedeps").value
 
-console.log("MAIN IS ON!!")
-
 browser.runtime.onMessage.addListener((message) => {
-	console.log("message::", message)
+	console.log(message, watched)
 	return Promise.resolve(watched)
 	/*
 	if (message == "GetWatched") {
