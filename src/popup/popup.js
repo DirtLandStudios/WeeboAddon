@@ -14,11 +14,9 @@ browser.tabs.query({currentWindow: true, active: true})
 		browser.storage.local.get("JsonUrl")
 		.then( (JsonUrl) => fetch(JsonUrl["JsonUrl"]).json())
 		.then( (database) => {
-			browser.tabs.sendMessage(tabs[0].id, database)
 			let links = database[animeID]
 			for (i in links) {
 				let Int_i = parseInt(i)
-				browser.tabs.sendMessage(tabs[0].id, Int_i)
 				if (Number.isNaN(Int_i)) {
 					AddLink(links, i)
 				}
