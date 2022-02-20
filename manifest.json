@@ -2,6 +2,7 @@
 
 	"manifest_version": 2,
 	"name": "weeboaddon",
+	"author": "Dirt Land Studios",
 	"version": "0.0.1",
   
 	"description": "A browser addon that adds user defined links in MAL",
@@ -24,8 +25,8 @@
 	  },
 	  
 	  "browser_action": {
-		"default_popup": "/src/popup/popup.html",
-		"browser_style": true
+		"default_title": "WeeboAddon",
+		"default_popup": "src/popup/popup.html"
 	  }
   }
   

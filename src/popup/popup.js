@@ -10,23 +10,26 @@ browser.tabs.query({currentWindow: true, active: true})
 	var animeID = new URL(tabs[0].url).pathname.split("/")[2]
 	browser.tabs.sendMessage(tabs[0].id, "GetWatched")
 	browser.runtime.onMessage.addListener( (message) => {
-		var watched = parseInt(message)
-		browser.storage.local.get("JsonUrl")
-		.then( (JsonUrl) => fetch(JsonUrl["JsonUrl"]).json())
-		.then( (database) => {
-			let links = database[animeID]
-			for (i in links) {
-				let Int_i = parseInt(i)
-				if (Number.isNaN(Int_i)) {
-					AddLink(links, i)
-				}
-				else if (Int_i == watched + 1) {
-					let episodelinks = links[i]
-					for (episode_i in episodelinks) {
-						AddLink(episodelinks, episode_i)
-					}
+		watched = parseInt(message)
+		console.log(watched)
+		JsonUrl = await browser.storage.local.get("JsonUrl")
+		console.log(JsonUrl)
+		database = await fetch(JsonUrl["JsonUrl"])
+		console.log(database)
+		links = database[animeID]
+		for (i in links) {
+			//check for batch anime
+			let Int_i = parseInt(i)
+			if (Number.isNaN(Int_i)) {
+				AddLink(links, i)
+			}
+			//check for episodic anime
+			else if (Int_i == watched + 1) {
+				let episodelinks = links[i]
+				for (episode_i in episodelinks) {
+					AddLink(episodelinks, episode_i)
 				}
 			}
-		})
+		}
 	})
 })

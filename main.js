@@ -4,5 +4,6 @@ browser.runtime.onMessage.addListener((message) => {
 	console.log(message, watched)
 	if (message == "GetWatched") {
 		browser.runtime.sendMessage(watched)
+		console.log(watched)
 	}
 })
