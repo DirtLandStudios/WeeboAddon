@@ -10,7 +10,7 @@
 	"content_scripts": [
 	  {
 		"matches": ["*://*.myanimelist.net/anime/*"],
-		"js": ["main.js"]
+		"js": ["src/main.js"]
 	  }
 	],
 	"options_ui": {
