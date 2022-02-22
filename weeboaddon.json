@@ -2,6 +2,14 @@
 	"name": "weeboaddon",
 	"type": "storage",
 	"data": {
+		"Database" : {
+			"40834": {
+				"2": {
+					"link name episode 2": "link episode 2"
+				},
+				"link name": "link"
+			}
+		},
 		"JsonUrl":"https://raw.githubusercontent.com/DirtLandStudios/WeeboAddon/episode-testing/example%20database.json"
 	}
 }
