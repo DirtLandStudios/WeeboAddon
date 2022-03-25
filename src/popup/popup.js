@@ -15,23 +15,23 @@ browser.tabs.query({currentWindow: true, active: true})
 // browser.tabs.executeScript({file: "/src/main.js"})
 
 
-browser.runtime.onMessage.addListener( (message) => {
-	let watched = parseInt(message)
-	let Json = await browser.storage.local.get("Database")
-	let database = Json //JSON.parse(Json)
-	let links = database[animeID]
-	for (i in links) {
-		//check for batch anime
-		let Int_i = parseInt(i)
-		if (Number.isNaN(Int_i)) {
-			AddLink(links, i)
-		}
-		//check for episodic anime
-		else if (Int_i == watched + 1) {
-			let episodelinks = links[i]
-			for (episode_i in episodelinks) {
-				AddLink(episodelinks, episode_i)
-			}
+let watched = parseInt(await browser.storage.local.get("CurrentEps"))
+let Json = await browser.storage.local.get("Database")
+alert("HELLO")
+alert(JSON.stringify(Json))
+let database = Json //JSON.parse(Json)
+let links = database[animeID]
+for (i in links) {
+	//check for batch anime
+	let Int_i = parseInt(i)
+	if (Number.isNaN(Int_i)) {
+		AddLink(links, i)
+	}
+	//check for episodic anime
+	else if (Int_i == watched + 1) {
+		let episodelinks = links[i]
+		for (episode_i in episodelinks) {
+			AddLink(episodelinks, episode_i)
 		}
 	}
-})
+}
