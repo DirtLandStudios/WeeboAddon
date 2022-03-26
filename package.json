@@ -7,5 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "BTP",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DirtLandStudios/WeeboAddon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DirtLandStudios/WeeboAddon/issues"
+  },
+  "homepage": "https://github.com/DirtLandStudios/WeeboAddon#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
 }

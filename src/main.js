@@ -18,7 +18,20 @@ var database = {
 		"link name": "link"
 	}
 }
-browser.storage.local.set({CurrentEps: watched})
-console.log(watched)
-browser.storage.local.set({Database: database})
+var animeID = new URL(browser.tabs.getCurrent().url).pathname.split("/")[2]
+animeID.then(() => {
+	
+	browser.storage.local.set({"AnimeID": animeID})
+	browser.storage.local.set({"CurrentEps": watched})
+})
+
+
+browser.storage.local.set({"Database": JSON.stringify(database)})
+/*var db = browser.storage.local.get("Database")
 console.log("HELLO")
+console.log(db)
+*/
+/* browser.storage.onChanged.addListener((changes) => {
+	console.log(changes)
+}) */
+var AnimeID = browser.storage.local.get("AnimeID").then(() => {console.log("HEEEELO" + AnimeID)})
